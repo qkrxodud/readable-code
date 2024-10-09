@@ -35,11 +35,11 @@ public class StudyCafePassMachine {
 
     private void handlePassSelection(StudyCafePassType studyCafePassType, StudyCafePasses studyCafePasses) {
         if (studyCafePassType.isHourly()) {
-            processPassSelection(studyCafePasses.getHourlyPasses(), null);
+            processPassSelection(studyCafePasses.getHourlyPasses());
             return;
         }
         if (studyCafePassType.isWeekly()) {
-            processPassSelection(studyCafePasses.getWeeklyPasses(), null);
+            processPassSelection(studyCafePasses.getWeeklyPasses());
             return;
         } if (studyCafePassType.isFixed()) {
             processFixedPassSelection(studyCafePasses.getFixedPasses());
@@ -48,9 +48,9 @@ public class StudyCafePassMachine {
         throw new RuntimeException("사용되지 않는 타입입니다.");
     }
 
-    private void processPassSelection(List<StudyCafePass> passes, StudyCafeLockerPass lockerPass) {
+    private void processPassSelection(List<StudyCafePass> passes) {
         StudyCafePass passSelection = getPassSelection(passes);
-        StudyCafeUser studyCafeUser = new StudyCafeUser(passSelection, lockerPass);
+        StudyCafeUser studyCafeUser = new StudyCafeUser(passSelection, null);
         studyCafeUser.showPassOrderSummary(outputHandler);
     }
 
