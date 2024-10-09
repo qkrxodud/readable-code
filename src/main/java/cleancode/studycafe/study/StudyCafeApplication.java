@@ -1,4 +1,4 @@
-package cleancode.studycafe.asis;
+package cleancode.studycafe.study;
 
 public class StudyCafeApplication {
 

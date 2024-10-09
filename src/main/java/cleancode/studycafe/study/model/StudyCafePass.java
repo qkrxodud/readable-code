@@ -1,6 +1,4 @@
-package cleancode.studycafe.asis.model;
-
-import cleancode.studycafe.asis.io.OutputHandler;
+package cleancode.studycafe.study.model;
 
 public class StudyCafePass {
 

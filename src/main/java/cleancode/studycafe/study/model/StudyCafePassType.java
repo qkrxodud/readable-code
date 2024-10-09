@@ -1,4 +1,4 @@
-package cleancode.studycafe.asis.model;
+package cleancode.studycafe.study.model;
 
 public enum StudyCafePassType {
     HOURLY, WEEKLY, FIXED;

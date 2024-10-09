@@ -1,4 +1,4 @@
-package cleancode.studycafe.asis.exception;
+package cleancode.studycafe.study.exception;
 
 public class AppException extends RuntimeException {
 

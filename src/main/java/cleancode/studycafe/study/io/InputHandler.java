@@ -1,7 +1,7 @@
-package cleancode.studycafe.asis.io;
+package cleancode.studycafe.study.io;
 
-import cleancode.studycafe.asis.model.StudyCafePass;
-import cleancode.studycafe.asis.model.StudyCafePassType;
+import cleancode.studycafe.study.model.StudyCafePass;
+import cleancode.studycafe.study.model.StudyCafePassType;
 
 import java.util.List;
 import java.util.Scanner;

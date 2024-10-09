@@ -1,8 +1,8 @@
-package cleancode.studycafe.asis.model;
+package cleancode.studycafe.study.model;
 
 
-import cleancode.studycafe.asis.io.InputHandler;
-import cleancode.studycafe.asis.io.OutputHandler;
+import cleancode.studycafe.study.io.InputHandler;
+import cleancode.studycafe.study.io.OutputHandler;
 
 public class StudyCafeLockerPass {
 

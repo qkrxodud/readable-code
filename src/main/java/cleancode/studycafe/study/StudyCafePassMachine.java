@@ -1,10 +1,10 @@
-package cleancode.studycafe.asis;
+package cleancode.studycafe.study;
 
-import cleancode.studycafe.asis.exception.AppException;
-import cleancode.studycafe.asis.io.InputHandler;
-import cleancode.studycafe.asis.io.OutputHandler;
-import cleancode.studycafe.asis.io.StudyCafeFileHandler;
-import cleancode.studycafe.asis.model.*;
+import cleancode.studycafe.study.exception.AppException;
+import cleancode.studycafe.study.io.InputHandler;
+import cleancode.studycafe.study.io.OutputHandler;
+import cleancode.studycafe.study.io.StudyCafeFileHandler;
+import cleancode.studycafe.study.model.*;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package cleancode.studycafe.asis.model;
+package cleancode.studycafe.study.model;
 
 
 import java.util.List;
