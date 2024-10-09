@@ -11,10 +11,13 @@ import cleancode.studycafe.asis.model.StudyCafePass;
 import cleancode.studycafe.asis.model.StudyCafePassType;
 
 public class StudyCafeFileHandler {
+    private static final String STUDY_CAFE_PASS_PATH = "src/main/resources/cleancode/studycafe/pass-list.csv";
+    private static final String STUDY_LOCKER_PASS_PATH = "src/main/resources/cleancode/studycafe/locker.csv";
+    private static final String FILE_READ_EXCEPTION_MSG = "파일을 읽는데 실패했습니다.";
 
     public List<StudyCafePass> readStudyCafePasses() {
         try {
-            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/cleancode/studycafe/pass-list.csv"));
+            List<String> lines = Files.readAllLines(Paths.get(STUDY_CAFE_PASS_PATH));
             List<StudyCafePass> studyCafePasses = new ArrayList<>();
             for (String line : lines) {
                 String[] values = line.split(",");
@@ -29,13 +32,13 @@ public class StudyCafeFileHandler {
 
             return studyCafePasses;
         } catch (IOException e) {
-            throw new RuntimeException("파일을 읽는데 실패했습니다.", e);
+            throw new RuntimeException(FILE_READ_EXCEPTION_MSG, e);
         }
     }
 
     public List<StudyCafeLockerPass> readLockerPasses() {
         try {
-            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/cleancode/studycafe/locker.csv"));
+            List<String> lines = Files.readAllLines(Paths.get(STUDY_LOCKER_PASS_PATH));
             List<StudyCafeLockerPass> lockerPasses = new ArrayList<>();
             for (String line : lines) {
                 String[] values = line.split(",");
@@ -49,7 +52,7 @@ public class StudyCafeFileHandler {
 
             return lockerPasses;
         } catch (IOException e) {
-            throw new RuntimeException("파일을 읽는데 실패했습니다.", e);
+            throw new RuntimeException(FILE_READ_EXCEPTION_MSG, e);
         }
     }
 

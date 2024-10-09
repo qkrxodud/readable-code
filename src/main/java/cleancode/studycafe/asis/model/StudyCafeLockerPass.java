@@ -1,27 +1,25 @@
 package cleancode.studycafe.asis.model;
 
+
+import cleancode.studycafe.asis.io.InputHandler;
+import cleancode.studycafe.asis.io.OutputHandler;
+
 public class StudyCafeLockerPass {
 
     private final StudyCafePassType passType;
     private final int duration;
     private final int price;
+    private boolean lockerPassActive;
 
     private StudyCafeLockerPass(StudyCafePassType passType, int duration, int price) {
         this.passType = passType;
         this.duration = duration;
         this.price = price;
+        this.lockerPassActive = false;
     }
 
     public static StudyCafeLockerPass of(StudyCafePassType passType, int duration, int price) {
         return new StudyCafeLockerPass(passType, duration, price);
-    }
-
-    public StudyCafePassType getPassType() {
-        return passType;
-    }
-
-    public int getDuration() {
-        return duration;
     }
 
     public int getPrice() {
@@ -41,4 +39,16 @@ public class StudyCafeLockerPass {
         return "";
     }
 
+    public boolean isMatchingPassType(final StudyCafePassType passType, final int duration) {
+        return (this.passType == passType && this.duration == duration);
+    }
+
+    public void askLockerPass(OutputHandler outputHandler, InputHandler inputHandler) {
+        outputHandler.askLockerPass(this);
+        lockerPassActive = inputHandler.getLockerSelection();
+    }
+
+    public boolean islockerPassActive() {
+        return lockerPassActive;
+    }
 }

@@ -1,5 +1,7 @@
 package cleancode.studycafe.asis.model;
 
+import cleancode.studycafe.asis.io.OutputHandler;
+
 public class StudyCafePass {
 
     private final StudyCafePassType passType;
@@ -47,4 +49,15 @@ public class StudyCafePass {
         return "";
     }
 
+    public boolean isHourly() {
+        return passType.isHourly();
+    }
+
+    public boolean isWeekly() {
+        return passType.isWeekly();
+    }
+
+    public boolean isFixed() {
+        return passType.isFixed();
+    }
 }
