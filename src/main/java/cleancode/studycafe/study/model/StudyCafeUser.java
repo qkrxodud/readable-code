@@ -13,11 +13,11 @@ public class StudyCafeUser {
         this.studyCafeLockerPass = studyCafeLockerPass;
     }
 
-    public void askLockerPass(OutputHandler outputHandler, InputHandler inputHandler) {
+    public void promptAndSaveLockerPassChoice(OutputHandler outputHandler, InputHandler inputHandler) {
         if (Objects.isNull(studyCafeLockerPass)) {
             return;
         }
-        studyCafeLockerPass.askLockerPass(outputHandler, inputHandler);
+        studyCafeLockerPass.promptAndSaveLockerPassChoice(outputHandler, inputHandler);
     }
 
     public void showPassOrderSummary(OutputHandler outputHandler) {

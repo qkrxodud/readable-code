@@ -35,33 +35,33 @@ public class StudyCafePassMachine {
 
     private void handlePassSelection(StudyCafePassType studyCafePassType, StudyCafePasses studyCafePasses) {
         if (studyCafePassType.isHourly()) {
-            processPassSelection(studyCafePasses.getHourlyPasses());
+            selectionPass(studyCafePasses.getHourlyPasses());
             return;
         }
         if (studyCafePassType.isWeekly()) {
-            processPassSelection(studyCafePasses.getWeeklyPasses());
+            selectionPass(studyCafePasses.getWeeklyPasses());
             return;
         } if (studyCafePassType.isFixed()) {
-            processFixedPassSelection(studyCafePasses.getFixedPasses());
+            selectionFixedPass(studyCafePasses.getFixedPasses());
             return;
         }
         throw new RuntimeException("사용되지 않는 타입입니다.");
     }
 
-    private void processPassSelection(List<StudyCafePass> passes) {
+    private void selectionPass(List<StudyCafePass> passes) {
         StudyCafePass passSelection = getPassSelection(passes);
         StudyCafeUser studyCafeUser = new StudyCafeUser(passSelection, null);
         studyCafeUser.showPassOrderSummary(outputHandler);
     }
 
-    private void processFixedPassSelection(List<StudyCafePass> fixedPasses) {
+    private void selectionFixedPass(List<StudyCafePass> fixedPasses) {
         StudyCafePass passSelection = getPassSelection(fixedPasses);
 
         StudyCafeLockerPasses studyCafeLockerPasses = new StudyCafeLockerPasses(studyCafeFileHandler.readLockerPasses());
         StudyCafeLockerPass lockerPass = studyCafeLockerPasses.findMatchingLockerPass(passSelection);
 
         StudyCafeUser studyCafeUser = new StudyCafeUser(passSelection, lockerPass);
-        studyCafeUser.askLockerPass(outputHandler, inputHandler);
+        studyCafeUser.promptAndSaveLockerPassChoice(outputHandler, inputHandler);
         studyCafeUser.showPassOrderSummary(outputHandler);
     }
 

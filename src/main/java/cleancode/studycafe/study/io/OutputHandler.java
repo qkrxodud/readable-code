@@ -49,7 +49,7 @@ public class OutputHandler {
         displayMessage(USAGE_HISTORY_TITLE);
         displayMessage(PASS_TYPE_LABEL + selectedPass.display());
 
-        if (lockerPass != null && lockerPass.islockerPassActive()) {
+        if (lockerPass != null && lockerPass.isLockerPassActive()) {
             displayMessage("사물함: " + lockerPass.display());
         }
 

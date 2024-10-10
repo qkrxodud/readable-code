@@ -27,13 +27,13 @@ public class StudyCafeLockerPass {
     }
 
     public String display() {
-        if (passType == StudyCafePassType.HOURLY) {
+        if (passType.isHourly()) {
             return String.format("%s시간권 - %d원", duration, price);
         }
-        if (passType == StudyCafePassType.WEEKLY) {
+        if (passType.isWeekly()) {
             return String.format("%s주권 - %d원", duration, price);
         }
-        if (passType == StudyCafePassType.FIXED) {
+        if (passType.isFixed()) {
             return String.format("%s주권 - %d원", duration, price);
         }
         return "";
@@ -43,12 +43,20 @@ public class StudyCafeLockerPass {
         return (this.passType == passType && this.duration == duration);
     }
 
-    public void askLockerPass(OutputHandler outputHandler, InputHandler inputHandler) {
+    public void promptAndSaveLockerPassChoice(OutputHandler outputHandler, InputHandler inputHandler) {
+        promptForLockerPassSelection(outputHandler);
+        updateLockerPassStatus(inputHandler);
+    }
+
+    private void promptForLockerPassSelection(OutputHandler outputHandler) {
         outputHandler.askLockerPass(this);
+    }
+
+    private void updateLockerPassStatus(InputHandler inputHandler) {
         lockerPassActive = inputHandler.getLockerSelection();
     }
 
-    public boolean islockerPassActive() {
+    public boolean isLockerPassActive() {
         return lockerPassActive;
     }
 }
