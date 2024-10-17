@@ -2,6 +2,7 @@ package cleancode.studycafe.study;
 
 import cleancode.studycafe.study.exception.AppException;
 import cleancode.studycafe.study.io.InputHandler;
+import cleancode.studycafe.study.io.InputHandlerImpl;
 import cleancode.studycafe.study.io.OutputHandler;
 import cleancode.studycafe.study.io.StudyCafeFileHandler;
 import cleancode.studycafe.study.model.*;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class StudyCafePassMachine {
 
-    private final InputHandler inputHandler = new InputHandler();
+    private final InputHandler inputHandler = new InputHandlerImpl();
     private final OutputHandler outputHandler = new OutputHandler();
     private final StudyCafeFileHandler studyCafeFileHandler = new StudyCafeFileHandler();
 

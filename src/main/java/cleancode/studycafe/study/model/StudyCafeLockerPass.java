@@ -26,6 +26,10 @@ public class StudyCafeLockerPass {
         return price;
     }
 
+    public int getDuration() {
+        return duration;
+    }
+
     public String display() {
         if (passType.isHourly()) {
             return String.format("%s시간권 - %d원", duration, price);
@@ -52,7 +56,7 @@ public class StudyCafeLockerPass {
         outputHandler.askLockerPass(this);
     }
 
-    private void updateLockerPassStatus(InputHandler inputHandler) {
+    public void updateLockerPassStatus(InputHandler inputHandler) {
         lockerPassActive = inputHandler.getLockerSelection();
     }
 
